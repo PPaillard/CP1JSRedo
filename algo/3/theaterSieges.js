@@ -18,7 +18,15 @@ exemple :
 */
 
 function theaterSieges() {
-  // Your code here !
+  const arr1 = [];
+  for (let rangee = 1; rangee <= 26; rangee++) { // boucle de 1 à 26 les rangee 
+    const arrRangee = [];
+    for (let siege = 1; siege <= 100; siege++) { // pour chaque boucle rangee, boucle les sièges de 1 à 100 
+      arrRangee.push(rangee + "-" + siege);  // et push les rangées 
+    }
+    arr1.push(arrRangee);
+  }
+  return arr1;
 }
 
 console.log(theaterSieges());
