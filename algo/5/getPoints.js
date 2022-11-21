@@ -1,6 +1,6 @@
 /* Notre équipe de football participe à un championnat
 dans laquelle elle a joué 10 matchs.
-Le résultat d'un match est comme suit : "3-0"
+Le résultat d'un match est comme suit : "3:0"
 Le premier chiffre correspond au nombre de but que notre équipe a marqué.
 Le deuxième correspond au nombre de but que notre adversaire a marqué.
 Victoire : +3 points
@@ -15,7 +15,20 @@ de points de notre équipe à la fin du championnat
 const scores = ['1:0', '2:0', '3:0', '4:4', '2:2', '3:3', '1:4', '2:3', '2:4', '3:3'];
 
 function getPoints(array) {
-  // Your code here !
+  let score = 0;
+
+  array.forEach(match => {
+    
+    const result = match.split(':')
+    const resultParsed = result.map(element=>parseInt(element))
+    if(resultParsed[0] > resultParsed[1]) score += 3
+    else if(resultParsed[0] === resultParsed[1]) score += 1 
+
+    // const [local, visitor] = match.split(':').map(el=>parseInt(el))
+    // score += (local>visitor? 3 : (local===visitor? 1:0))
+
+  });
+  return score
 }
 
 module.exports = getPoints;

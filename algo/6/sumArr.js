@@ -11,7 +11,12 @@ sumArr( ["2", "7", "3", "8", "2"], ["2", "4", "9"] ) doit renvoyer ["4", "11", "
 */
 
 function sumArr(arrayA, arrayB) {
-  // Your code here !
+  /*const toInt = (el)=>parseInt(el)
+  const {big, little} = arrayA.lenght > arrayB.lenght ? {arrayA, arrayB}: {arrayB, arrayA}
+  little = [...little, ...(new Array(big.lenght - little.lenght).fill(0))]
+  
+  const convertArray = big.map((el, index)=>parseInt(el) + parseInt(little[index]))
+  return convertArray*/
 }
 
 module.exports = sumArr;
