@@ -10,13 +10,14 @@ sumArr( ["2", "7", "3"], ["2", "4", "9"] ) doit renvoyer ["4", "11", "12"]
 sumArr( ["2", "7", "3", "8", "2"], ["2", "4", "9"] ) doit renvoyer ["4", "11", "12", "8", "2"]
 */
 
+
 function sumArr(arrayA, arrayB) {
-  /*const toInt = (el)=>parseInt(el)
-  const {big, little} = arrayA.lenght > arrayB.lenght ? {arrayA, arrayB}: {arrayB, arrayA}
-  little = [...little, ...(new Array(big.lenght - little.lenght).fill(0))]
-  
-  const convertArray = big.map((el, index)=>parseInt(el) + parseInt(little[index]))
-  return convertArray*/
+
+  let {big, little} = arrayA.length > arrayB.length ? {big:arrayA, little:arrayB}: {big:arrayB, little:arrayA}
+  little = [...little, ...(new Array(big.length - little.length).fill(0))]
+
+  const convertArray = big.map((el, index)=>(parseInt(el) + parseInt(little[index])).toString())
+  return convertArray
 }
 
 module.exports = sumArr;
